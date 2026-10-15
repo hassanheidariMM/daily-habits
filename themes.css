@@ -1,0 +1,264 @@
+/* ============================================
+   Daily Habits - Themes
+   تم‌های رنگ (نسخه فشرده)
+   ============================================ */
+
+/* ============ تم‌های رنگ ساده (۲۰ تم) ============ */
+
+body.theme-blue { --primary: #60a5fa; --primary-dark: #3b82f6; --primary-light: #93c5fd; }
+body.theme-purple { --primary: #a78bfa; --primary-dark: #8b5cf6; --primary-light: #c4b5fd; }
+body.theme-green { --primary: #22c55e; --primary-dark: #16a34a; --primary-light: #4ade80; }
+body.theme-pink { --primary: #ec4899; --primary-dark: #db2777; --primary-light: #f472b6; }
+body.theme-orange { --primary: #f59e0b; --primary-dark: #d97706; --primary-light: #fbbf24; }
+body.theme-teal { --primary: #14b8a6; --primary-dark: #0d9488; --primary-light: #2dd4bf; }
+body.theme-red { --primary: #ef4444; --primary-dark: #dc2626; --primary-light: #f87171; }
+body.theme-yellow { --primary: #eab308; --primary-dark: #ca8a04; --primary-light: #facc15; }
+body.theme-indigo { --primary: #6366f1; --primary-dark: #4f46e5; --primary-light: #818cf8; }
+body.theme-rose { --primary: #f43f5e; --primary-dark: #e11d48; --primary-light: #fb7185; }
+body.theme-cyan { --primary: #06b6d4; --primary-dark: #0891b2; --primary-light: #22d3ee; }
+body.theme-lime { --primary: #84cc16; --primary-dark: #65a30d; --primary-light: #a3e635; }
+body.theme-amber { --primary: #fbbf24; --primary-dark: #f59e0b; --primary-light: #fcd34d; }
+body.theme-emerald { --primary: #10b981; --primary-dark: #059669; --primary-light: #34d399; }
+body.theme-sky { --primary: #0ea5e9; --primary-dark: #0284c7; --primary-light: #38bdf8; }
+body.theme-violet { --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; }
+body.theme-fuchsia { --primary: #d946ef; --primary-dark: #c026d3; --primary-light: #e879f9; }
+body.theme-slate { --primary: #64748b; --primary-dark: #475569; --primary-light: #94a3b8; }
+body.theme-coral { --primary: #ff7f50; --primary-dark: #e85d3c; --primary-light: #ffa07a; }
+body.theme-mint { --primary: #4ade80; --primary-dark: #22c55e; --primary-light: #86efac; }
+
+/* ============ تم‌های خاص (۵ تم) ============ */
+
+body.theme-ramadan { --primary: #fbbf24; --primary-dark: #d97706; --primary-light: #fcd34d; --purple: #10b981; --bg: #0a0e1a; --bg-card: #141d33; --bg-item: #1e2a44; --bg-dark: #050810; }
+body.theme-muharram { --primary: #ef4444; --primary-dark: #991b1b; --primary-light: #f87171; --purple: #64748b; --bg: #0a0505; --bg-card: #1a0a0a; --bg-item: #2a1010; --bg-dark: #050202; }
+body.theme-nowruz { --primary: #22c55e; --primary-dark: #16a34a; --primary-light: #4ade80; --purple: #f472b6; --bg: #0a1a0f; --bg-card: #14281a; --bg-item: #1e3a28; --bg-dark: #050f08; }
+body.theme-space { --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --purple: #d946ef; --bg: #050210; --bg-card: #120a2e; --bg-item: #1e1450; --bg-dark: #020108; }
+body.theme-fire { --primary: #ef4444; --primary-dark: #dc2626; --primary-light: #f87171; --purple: #f59e0b; --bg: #100505; --bg-card: #2a0f0f; --bg-item: #3a1a1a; --bg-dark: #080202; }
+
+/* ============ تم‌های پرمیوم (۵ تم) ============ */
+
+body.theme-gold { --primary: #fbbf24; --primary-dark: #d97706; --primary-light: #fcd34d; --purple: #f59e0b; --bg: #1a1204; --bg-card: #2a1d08; --bg-item: #3a2810; --bg-dark: #0f0a02; }
+body.theme-diamond { --primary: #22d3ee; --primary-dark: #06b6d4; --primary-light: #67e8f9; --purple: #a78bfa; --bg: #04121a; --bg-card: #08202e; --bg-item: #0f2f42; --bg-dark: #020810; }
+body.theme-royal { --primary: #a855f7; --primary-dark: #7e22ce; --primary-light: #c084fc; --purple: #fbbf24; --bg: #0f0419; --bg-card: #1f0a2e; --bg-item: #2f1042; --bg-dark: #08020f; }
+body.theme-galaxy { --primary: #818cf8; --primary-dark: #6366f1; --primary-light: #a5b4fc; --purple: #ec4899; --bg: #060618; --bg-card: #0f0f2e; --bg-item: #1a1a44; --bg-dark: #030308; }
+body.theme-ocean { --primary: #0ea5e9; --primary-dark: #0284c7; --primary-light: #38bdf8; --purple: #14b8a6; --bg: #041525; --bg-card: #0a2842; --bg-item: #103a5c; --bg-dark: #020a14; }
+
+/* ============ تم‌های پرمیوم ویژه (۳ تم) ============ */
+
+body.theme-sunset { --primary: #f97316; --primary-dark: #ea580c; --primary-light: #fb923c; --purple: #ec4899; --bg: #1a0a0e; --bg-card: #2e1218; --bg-item: #421e26; --bg-dark: #0f0507; }
+body.theme-aurora { --primary: #10b981; --primary-dark: #059669; --primary-light: #34d399; --purple: #8b5cf6; --bg: #041a14; --bg-card: #0a2e24; --bg-item: #0f4234; --bg-dark: #020f0a; }
+body.theme-lava { --primary: #f97316; --primary-dark: #c2410c; --primary-light: #fb923c; --purple: #ef4444; --bg: #1a0804; --bg-card: #2e100a; --bg-item: #421810; --bg-dark: #0f0402; }
+
+/* ============ پیش‌نمایش تم (فشرده) ============ */
+
+.theme-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.theme-option {
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.theme-option:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.theme-option.active {
+  border-color: var(--text-bright);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.theme-option.active::after {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* ============ رنگ‌های تم ============ */
+
+.theme-option[data-theme="indigo"] { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+.theme-option[data-theme="blue"] { background: linear-gradient(135deg, #60a5fa, #3b82f6); }
+.theme-option[data-theme="purple"] { background: linear-gradient(135deg, #a78bfa, #8b5cf6); }
+.theme-option[data-theme="green"] { background: linear-gradient(135deg, #22c55e, #16a34a); }
+.theme-option[data-theme="pink"] { background: linear-gradient(135deg, #ec4899, #db2777); }
+.theme-option[data-theme="orange"] { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.theme-option[data-theme="teal"] { background: linear-gradient(135deg, #14b8a6, #0d9488); }
+.theme-option[data-theme="red"] { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.theme-option[data-theme="yellow"] { background: linear-gradient(135deg, #eab308, #ca8a04); }
+.theme-option[data-theme="rose"] { background: linear-gradient(135deg, #f43f5e, #e11d48); }
+.theme-option[data-theme="cyan"] { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+.theme-option[data-theme="lime"] { background: linear-gradient(135deg, #84cc16, #65a30d); }
+.theme-option[data-theme="amber"] { background: linear-gradient(135deg, #fbbf24, #f59e0b); }
+.theme-option[data-theme="emerald"] { background: linear-gradient(135deg, #10b981, #059669); }
+.theme-option[data-theme="sky"] { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
+.theme-option[data-theme="violet"] { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+.theme-option[data-theme="fuchsia"] { background: linear-gradient(135deg, #d946ef, #c026d3); }
+.theme-option[data-theme="slate"] { background: linear-gradient(135deg, #64748b, #475569); }
+.theme-option[data-theme="coral"] { background: linear-gradient(135deg, #ff7f50, #e85d3c); }
+.theme-option[data-theme="mint"] { background: linear-gradient(135deg, #4ade80, #22c55e); }
+.theme-option[data-theme="ramadan"] { background: linear-gradient(135deg, #fbbf24, #10b981); }
+.theme-option[data-theme="muharram"] { background: linear-gradient(135deg, #ef4444, #1e293b); }
+.theme-option[data-theme="nowruz"] { background: linear-gradient(135deg, #22c55e, #f472b6); }
+.theme-option[data-theme="space"] { background: linear-gradient(135deg, #8b5cf6, #d946ef); }
+.theme-option[data-theme="fire"] { background: linear-gradient(135deg, #ef4444, #f59e0b); }
+.theme-option[data-theme="gold"] { background: linear-gradient(135deg, #fbbf24, #f59e0b); }
+.theme-option[data-theme="diamond"] { background: linear-gradient(135deg, #22d3ee, #a78bfa); }
+.theme-option[data-theme="royal"] { background: linear-gradient(135deg, #a855f7, #fbbf24); }
+.theme-option[data-theme="galaxy"] { background: linear-gradient(135deg, #818cf8, #ec4899); }
+.theme-option[data-theme="ocean"] { background: linear-gradient(135deg, #0ea5e9, #14b8a6); }
+.theme-option[data-theme="sunset"] { background: linear-gradient(135deg, #f97316, #ec4899); }
+.theme-option[data-theme="aurora"] { background: linear-gradient(135deg, #10b981, #8b5cf6); }
+.theme-option[data-theme="lava"] { background: linear-gradient(135deg, #f97316, #ef4444); }
+
+/* ============ قفل پرمیوم ============ */
+
+.theme-option.premium-locked::before {
+  content: '🔒';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 10px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+
+.theme-option.premium-locked.active::after {
+  content: '🔒';
+}
+
+/* ============ پس‌زمینه تصویری ============ */
+
+body.has-bg-image {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+body.has-bg-image::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  z-index: -1;
+}
+
+body.light.has-bg-image::before {
+  background: rgba(241, 245, 249, 0.85);
+}
+/* ============ تم‌های فصلی و مناسبت‌ها (پرمیوم) ============ */
+
+body.theme-winter {
+  --primary: #93c5fd;
+  --primary-dark: #3b82f6;
+  --primary-light: #bfdbfe;
+  --purple: #a5b4fc;
+  --bg: #0c1424;
+  --bg-card: #162338;
+  --bg-item: #1e3050;
+  --bg-dark: #060b14;
+}
+
+body.theme-spring {
+  --primary: #f472b6;
+  --primary-dark: #db2777;
+  --primary-light: #f9a8d4;
+  --purple: #86efac;
+  --bg: #0f1a0c;
+  --bg-card: #1a2818;
+  --bg-item: #26381e;
+  --bg-dark: #070f05;
+}
+
+body.theme-autumn {
+  --primary: #f97316;
+  --primary-dark: #c2410c;
+  --primary-light: #fb923c;
+  --purple: #eab308;
+  --bg: #1a0f05;
+  --bg-card: #2e1c0a;
+  --bg-item: #422a12;
+  --bg-dark: #0f0702;
+}
+
+body.theme-christmas {
+  --primary: #ef4444;
+  --primary-dark: #b91c1c;
+  --primary-light: #f87171;
+  --purple: #22c55e;
+  --bg: #0a1a0f;
+  --bg-card: #14281a;
+  --bg-item: #1e3a28;
+  --bg-dark: #050f08;
+}
+
+body.theme-halloween {
+  --primary: #f97316;
+  --primary-dark: #c2410c;
+  --primary-light: #fb923c;
+  --purple: #a855f7;
+  --bg: #0a0510;
+  --bg-card: #1a0e1f;
+  --bg-item: #2a162e;
+  --bg-dark: #050208;
+}
+
+body.theme-valentine {
+  --primary: #f43f5e;
+  --primary-dark: #e11d48;
+  --primary-light: #fb7185;
+  --purple: #f472b6;
+  --bg: #1a0510;
+  --bg-card: #2e0f1c;
+  --bg-item: #42182a;
+  --bg-dark: #0f0208;
+}
+
+body.theme-eid {
+  --primary: #22c55e;
+  --primary-dark: #16a34a;
+  --primary-light: #4ade80;
+  --purple: #fbbf24;
+  --bg: #05140c;
+  --bg-card: #0f2418;
+  --bg-item: #1a3424;
+  --bg-dark: #020a06;
+}
+
+body.theme-yaldа {
+  --primary: #a855f7;
+  --primary-dark: #7e22ce;
+  --primary-light: #c084fc;
+  --purple: #ef4444;
+  --bg: #0f0518;
+  --bg-card: #1f0a2e;
+  --bg-item: #2f1042;
+  --bg-dark: #08020f;
+}
+
+/* رنگ تم‌های جدید */
+.theme-option[data-theme="winter"] { background: linear-gradient(135deg, #93c5fd, #60a5fa); }
+.theme-option[data-theme="spring"] { background: linear-gradient(135deg, #f472b6, #86efac); }
+.theme-option[data-theme="autumn"] { background: linear-gradient(135deg, #f97316, #eab308); }
+.theme-option[data-theme="christmas"] { background: linear-gradient(135deg, #ef4444, #22c55e); }
+.theme-option[data-theme="halloween"] { background: linear-gradient(135deg, #f97316, #a855f7); }
+.theme-option[data-theme="valentine"] { background: linear-gradient(135deg, #f43f5e, #f472b6); }
+.theme-option[data-theme="eid"] { background: linear-gradient(135deg, #22c55e, #fbbf24); }
+.theme-option[data-theme="yaldа"] { background: linear-gradient(135deg, #a855f7, #ef4444); }

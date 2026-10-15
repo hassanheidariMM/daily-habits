@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="description" content="Daily Habits - Habit Tracker App">
+  <title>Daily Habits</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="themes.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+  <!-- ============ Splash Screen ============ -->
+  <div id="splash" class="splash">
+    <div class="splash-logo">
+      <svg viewBox="0 0 192 192" width="120" height="120">
+        <defs>
+          <linearGradient id="splashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+        <rect width="192" height="192" rx="40" fill="url(#splashGrad)"/>
+        <path d="M50 60 L50 140 L90 140 L90 60 Z" fill="#ffffff" opacity="0.95"/>
+        <path d="M100 60 L100 140 L145 140 L145 60 Z" fill="#fbbf24" opacity="0.95"/>
+        <circle cx="95" cy="50" r="12" fill="#ffffff"/>
+      </svg>
+    </div>
+    <h1 class="splash-title" data-i18n="appName">Daily Habits</h1>
+    <p class="splash-subtitle" data-i18n="appSubtitle">Habit Tracker</p>
+    <div class="splash-loader"></div>
+  </div>
+
+  <!-- ============ قفل پسورد ============ -->
+  <div id="lockScreen" class="lock-screen hidden">
+    <div class="lock-box">
+      <div class="lock-icon">🔒</div>
+      <h2 data-i18n="enterPassword">رمز عبور را وارد کنید</h2>
+      <input type="password" id="lockPassword" class="lock-input" inputmode="numeric" placeholder="••••">
+      <button class="lock-btn" id="lockSubmit" data-i18n="unlock">باز کردن</button>
+      <p class="lock-error hidden" id="lockError" data-i18n="wrongPassword">رمز اشتباه است</p>
+    </div>
+  </div>
+
+  <!-- ============ اپ اصلی ============ -->
+  <div id="app" class="app hidden">
+
+    <!-- ============ هدر ============ -->
+    <header class="header">
+      <div class="header-top">
+        <h1 class="app-title" data-i18n="appName">Daily Habits</h1>
+        <span class="user-name" id="headerUserName"></span>
+      </div>
+      <button class="date-btn" id="dateBtn">
+        <span id="headerDate">—</span>
+      </button>
+      <div class="hijri-date" id="headerHijriDate"></div>
+    </header>
+
+    <!-- ============ جعبه سطح ============ -->
+    <div class="level-box" id="levelBox">
+      <div class="level-icon" id="levelIcon">🌱</div>
+      <div class="level-info">
+        <div class="level-name" id="levelName" data-i18n="levelNewbie">تازه‌کار</div>
+        <div class="level-progress-bg">
+          <div class="level-progress-fill" id="levelProgressFill" style="width:0%"></div>
+        </div>
+        <div class="level-points" id="levelPoints">۰ امتیاز</div>
+      </div>
+    </div>
+
+    <!-- ============ جمله انگیزشی ============ -->
+    <div class="motivation" id="motivationBox">
+      <div class="motivation-text" id="motivationText">امروز روز توئه! 💪</div>
+      <button class="motivation-btn" id="motivationEditBtn">✏️</button>
+    </div>
+
+    <!-- ============ محتوای تب‌ها ============ -->
+    <main class="main-content" id="mainContent">
+
+      <!-- ===== تب خانه ===== -->
+      <section class="tab-content active" id="tab-home">
+        
+        <!-- نوار انتخاب روز -->
+        <div class="day-nav">
+          <button id="dayPrev" class="day-nav-btn">◀</button>
+          <button id="dayCurrent" class="day-nav-current">
+            <span id="dayLabel" data-i18n="today">امروز</span>
+          </button>
+          <button id="dayNext" class="day-nav-btn">▶</button>
+        </div>
+        
+        <button id="backToToday" class="back-to-today hidden" data-i18n="backToToday">🔙 بازگشت به امروز</button>
+
+        <!-- فیلترها -->
+        <div class="filter-bar">
+          <div class="filter-row">
+            <button class="filter-btn active" id="filterToday" data-filter="today">
+              📅 <span data-i18n="filterToday">امروز</span>
+            </button>
+            <button class="filter-btn" id="filterAll" data-filter="all">
+              📋 <span data-i18n="filterAll">همه عادت‌ها</span>
+            </button>
+          </div>
+          <div class="filter-row" id="categoryFilterRow">
+            <select id="categoryFilter" class="category-filter-select">
+              <option value="all" data-i18n="allCategories">📂 همه دسته‌ها</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="todayHabits">عادت‌های امروز</h2>
+          <div id="habitsList" class="items-list"></div>
+          <div class="add-box">
+            <input type="text" id="habitInput" data-i18n-placeholder="newHabit" placeholder="عادت جدید...">
+            <input type="time" id="habitTime">
+            <button id="addHabitBtn" data-i18n="add">افزودن</button>
+          </div>
+          <div class="mini-stats">
+            <span><span class="num" id="habitsDone">۰</span> / <span id="habitsTotal">۰</span></span>
+            <span data-i18n="done">انجام شده</span>
+          </div>
+          <div class="mini-bar"><div class="mini-fill fill-blue" id="habitsFill" style="width:0%"></div></div>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="todayTasks">کارهای امروز</h2>
+          <div id="tasksList" class="items-list"></div>
+          <div class="add-box">
+            <input type="text" id="taskInput" data-i18n-placeholder="newTask" placeholder="کار جدید...">
+            <input type="time" id="taskTime">
+            <button id="addTaskBtn" data-i18n="add">افزودن</button>
+          </div>
+          <div class="mini-stats">
+            <span><span class="num" id="tasksDone">۰</span> / <span id="tasksTotal">۰</span></span>
+            <span data-i18n="done">انجام شده</span>
+          </div>
+          <div class="mini-bar"><div class="mini-fill fill-green" id="tasksFill" style="width:0%"></div></div>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="myAvoids">پرهیزهای من</h2>
+          <div id="avoidsList" class="items-list"></div>
+          <div class="add-box">
+            <input type="text" id="avoidInput" data-i18n-placeholder="newAvoid" placeholder="پرهیز جدید...">
+            <button id="addAvoidBtn" data-i18n="add">افزودن</button>
+          </div>
+          <div class="mini-stats">
+            <span><span class="num" id="avoidsDone">۰</span> / <span id="avoidsTotal">۰</span></span>
+            <span data-i18n="done">انجام شده</span>
+          </div>
+          <div class="mini-bar"><div class="mini-fill fill-orange" id="avoidsFill" style="width:0%"></div></div>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="todayProgress">پیشرفت کل امروز</h2>
+          <div class="overall-progress">
+            <div class="overall-circle">
+              <svg viewBox="0 0 100 100" class="progress-ring">
+                <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                <circle cx="50" cy="50" r="42" class="ring-fill" id="overallRing"/>
+              </svg>
+              <div class="overall-percent" id="overallPercent">۰٪</div>
+            </div>
+            <div class="overall-stats" id="overallStats"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== تب آمار ===== -->
+      <section class="tab-content" id="tab-stats">
+        <div class="section">
+          <h2 data-i18n="last7Days">۷ روز اخیر</h2>
+          <div id="weekChart" class="bar-chart"></div>
+        </div>
+        <div class="section">
+          <h2 data-i18n="monthlyChart">نمودار ماهانه</h2>
+          <div id="monthlyChart" class="line-chart"></div>
+        </div>
+        <div class="section">
+          <h2 data-i18n="yearlyChart">نمودار سالانه</h2>
+          <div id="heatmap" class="heatmap"></div>
+        </div>
+        <div class="section">
+          <h2 data-i18n="records">رکوردها</h2>
+          <div id="recordsBox" class="records"></div>
+        </div>
+      </section>
+
+      <!-- ===== تب تحلیل ===== -->
+      <section class="tab-content" id="tab-analysis">
+        <div class="section">
+          <h2 data-i18n="smartAnalysis">تحلیل هوشمند</h2>
+          <div id="analysisBox" class="analysis-box"></div>
+        </div>
+      </section>
+
+      <!-- ===== تب ردیابی ===== -->
+      <section class="tab-content" id="tab-tracker">
+        <div id="challengeCard" class="challenge-card" style="display:none"></div>
+        <div id="rewardTodayCard" class="reward-today-card" style="display:none"></div>
+        <div id="waterCard" class="water-card"></div>
+        <div id="bookCard" class="book-card"></div>
+        
+        <div class="section">
+          <h2 data-i18n="focusTimer">تایمر تمرکز</h2>
+          <div class="timer-display" id="timerDisplay">۲۵:۰۰</div>
+          <div class="timer-controls">
+            <button id="timerStart" data-i18n="timerStart">شروع</button>
+            <button id="timerPause" data-i18n="timerPause">توقف</button>
+            <button id="timerReset" data-i18n="timerReset">ریست</button>
+          </div>
+          <div class="timer-presets">
+            <button data-min="15" data-i18n="minutes15">۱۵ دقیقه</button>
+            <button data-min="25" data-i18n="minutes25" class="active">۲۵ دقیقه</button>
+            <button data-min="45" data-i18n="minutes45">۴۵ دقیقه</button>
+            <button data-min="60" data-i18n="minutes60">۶۰ دقیقه</button>
+            <button id="timerCustom" data-custom="true" data-i18n="timerCustom">✏️ دلخواه</button>
+          </div>
+          <div class="focus-total">
+            <span data-i18n="focusMinutes">دقیقه تمرکز:</span>
+            <span id="focusTotal">۰</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== تب آرزوها ===== -->
+      <section class="tab-content" id="tab-dreams">
+        <div class="section">
+          <h2 data-i18n="todayDreams">امروز مشتاقم...</h2>
+          <div id="dreamsToday" class="items-list"></div>
+          <div class="add-box">
+            <input type="text" id="dreamTodayInput" placeholder="...">
+            <button id="addDreamTodayBtn" data-i18n="add">افزودن</button>
+          </div>
+        </div>
+        <div class="section">
+          <h2 data-i18n="weekDreams">این هفته مشتاقم...</h2>
+          <div id="dreamsWeek" class="items-list"></div>
+          <div class="add-box">
+            <input type="text" id="dreamWeekInput" placeholder="...">
+            <button id="addDreamWeekBtn" data-i18n="add">افزودن</button>
+          </div>
+        </div>
+        <div class="section">
+          <h2 data-i18n="monthDreams">این ماه مشتاقم...</h2>
+          <div id="dreamsMonth" class="items-list"></div>
+          <div class="add-box">
+            <input type="text" id="dreamMonthInput" placeholder="...">
+            <button id="addDreamMonthBtn" data-i18n="add">افزودن</button>
+          </div>
+        </div>
+        <div class="section">
+          <h2 data-i18n="yearDreams">این سال مشتاقم...</h2>
+          <div id="dreamsYear" class="items-list"></div>
+          <div class="add-box">
+            <input type="text" id="dreamYearInput" placeholder="...">
+            <button id="addDreamYearBtn" data-i18n="add">افزودن</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== تب جایزه ===== -->
+      <section class="tab-content" id="tab-rewards">
+        <div class="section">
+          <h2 data-i18n="myRewards">جایزه‌های من</h2>
+          <div id="rewardsList" class="items-list"></div>
+          <div class="add-box">
+            <input type="text" id="rewardInput" data-i18n-placeholder="rewardName" placeholder="نام جایزه...">
+            <button id="addRewardBtn" data-i18n="add">افزودن</button>
+          </div>
+        </div>
+        <div class="section">
+          <h2 data-i18n="openBox">باز کردن جعبه</h2>
+          <p class="reward-hint"><span data-i18n="rewardCost">هزینه</span>: <span data-i18n="points">امتیاز</span> ۵۰</p>
+          <button class="reward-box-btn" id="openRewardBox">🎁</button>
+          <div id="rewardResult" class="reward-result hidden"></div>
+        </div>
+      </section>
+
+      <!-- ===== تب یادداشت ===== -->
+      <section class="tab-content" id="tab-note">
+        <div class="section">
+          <h2 data-i18n="todayNote">یادداشت امروز</h2>
+          <textarea id="noteText" class="note-textarea" rows="8"></textarea>
+          <div class="note-tags">
+            <input type="text" id="noteTags" data-i18n-placeholder="tags" placeholder="برچسب‌ها (با کاما جدا کن)">
+          </div>
+          <div class="note-actions">
+            <button id="saveNoteBtn" data-i18n="save">ذخیره</button>
+            <button id="pinNoteBtn" data-i18n="pin">پین</button>
+          </div>
+        </div>
+        <div class="section">
+          <h2 data-i18n="searchAll">جستجو در همه‌چیز</h2>
+          <input type="text" id="searchInput" class="search-input" data-i18n-placeholder="search" placeholder="جستجو...">
+          <div id="searchResults" class="search-results"></div>
+        </div>
+      </section>
+
+      <!-- ===== تب خاطرات ===== -->
+      <section class="tab-content" id="tab-diary">
+        <div class="section">
+          <h2 data-i18n="myDiary">دفتر خاطرات</h2>
+          <div class="diary-nav">
+            <button id="diaryPrev">◀</button>
+            <span id="diaryDateLabel">—</span>
+            <button id="diaryNext">▶</button>
+          </div>
+          <textarea id="diaryText" class="diary-textarea" rows="12" data-i18n-placeholder="diaryPlaceholder" placeholder="امروز چه خبر؟"></textarea>
+          <div class="diary-actions">
+            <button id="saveDiaryBtn" data-i18n="save">ذخیره</button>
+            <button id="downloadPdfBtn" data-i18n="downloadPDF">دانلود PDF</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== تب گزارش ===== -->
+      <section class="tab-content" id="tab-report">
+        <div class="section">
+          <h2 data-i18n="reportTitle">گزارش</h2>
+          <div id="reportBox"></div>
+        </div>
+      </section>
+
+      <!-- ===== تب تنظیمات ===== -->
+      <section class="tab-content" id="tab-settings">
+        <div class="section">
+          <h2 data-i18n="general">تنظیمات عمومی</h2>
+          <label class="setting-row">
+            <span data-i18n="myName">نام من</span>
+            <input type="text" id="settingName">
+          </label>
+          <label class="setting-row">
+            <span data-i18n="language">زبان</span>
+            <select id="settingLanguage"></select>
+          </label>
+          <label class="setting-row">
+            <span data-i18n="calendarType">نوع تاریخ</span>
+            <select id="settingCalendar">
+              <option value="jalali" data-i18n="jalali">شمسی</option>
+              <option value="gregorian" data-i18n="gregorian">میلادی</option>
+              <option value="hijri" data-i18n="hijri">قمری</option>
+            </select>
+          </label>
+          <label class="setting-row">
+            <span data-i18n="darkMode">حالت شب/روز</span>
+            <input type="checkbox" id="settingDark">
+          </label>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="colorTheme">رنگ/تم</h2>
+          <div class="theme-preview" id="themePreview"></div>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="font">فونت</h2>
+          <select id="settingFont" style="width:100%;padding:10px;border-radius:8px;background:var(--bg-item);color:var(--text);border:2px solid var(--border)"></select>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="categories">📂 دسته‌بندی عادت‌ها</h2>
+          <div id="categoriesList" class="categories-list"></div>
+          <button id="addCategoryBtn" class="add-category-btn">➕ <span data-i18n="addCategory">افزودن دسته جدید</span></button>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="background">پس‌زمینه شخصی</h2>
+          <input type="file" id="bgImageInput" accept="image/*">
+          <button id="removeBgBtn" data-i18n="remove">حذف</button>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="security">امنیت</h2>
+          <label class="setting-row">
+            <span data-i18n="lockPassword">قفل پسورد</span>
+            <input type="checkbox" id="settingLock">
+          </label>
+          <input type="password" id="settingPassword" data-i18n-placeholder="changePassword" placeholder="پسورد جدید..." style="width:100%;padding:10px;border-radius:8px;background:var(--bg-item);color:var(--text);border:2px solid var(--border);margin-top:8px">
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="soundAndVibrate">صدا و ویبره</h2>
+          <label class="setting-row">
+            <span data-i18n="tickSound">صدای تیک</span>
+            <select id="settingSound"></select>
+          </label>
+          <p class="setting-hint" data-i18n="soundPremiumHint">🔒 صداهای علامت‌دار مخصوص پرمیوم هستن</p>
+          <button id="testSoundBtn" data-i18n="testSound" style="background:var(--primary-dark);color:#fff;border-radius:8px;padding:8px 14px;margin-top:8px">🔊 تست صدا</button>
+        </div>
+
+        <div class="section">
+          <h2>📳 <span data-i18n="vibrate">ویبره</span></h2>
+          <div id="vibrateSettings"></div>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="waterSettings">💧 تنظیمات آب خوردن</h2>
+          <label class="setting-row">
+            <span data-i18n="waterGoalLabel">هدف روزانه (لیوان)</span>
+            <input type="number" id="settingWaterGoal" min="1" max="20" value="8" style="width:80px;padding:8px;border-radius:8px;background:var(--bg-item);color:var(--text);border:2px solid var(--border);text-align:center">
+          </label>
+          <label class="setting-row">
+            <span data-i18n="cupSizeLabel">حجم لیوان (میلی‌لیتر)</span>
+            <input type="number" id="settingCupSize" min="50" max="1000" step="50" value="250" style="width:100px;padding:8px;border-radius:8px;background:var(--bg-item);color:var(--text);border:2px solid var(--border);text-align:center">
+          </label>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="sleepReminder">یادآوری خواب</h2>
+          <label class="setting-row">
+            <span data-i18n="on">روشن</span>
+            <input type="checkbox" id="settingSleep">
+          </label>
+          <label class="setting-row">
+            <span data-i18n="time">زمان</span>
+            <input type="time" id="settingSleepTime">
+          </label>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="backupRestore">پشتیبان‌گیری</h2>
+          <p class="setting-hint" data-i18n="backupFile">📁 پشتیبان فایل (برای کامپیوتر)</p>
+          <button id="backupDownload" data-i18n="download">📥 دانلود</button>
+          <input type="file" id="backupUpload" accept=".json" hidden>
+          <button id="backupUploadBtn" data-i18n="upload">📤 آپلود فایل</button>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="backupOnline">🔗 لینک پشتیبان آنلاین</h2>
+          <p class="setting-hint" data-i18n="backupOnlineHint">این کد رو کپی کن و جای امنی نگه‌دار.</p>
+          <textarea id="backupLinkInput" class="backup-link-input" rows="4" placeholder="..."></textarea>
+          <div class="backup-link-actions">
+            <button id="generateBackupLink" data-i18n="backupGenerate">🔗 ساخت کد</button>
+            <button id="copyBackupLink" data-i18n="backupCopy">📋 کپی</button>
+          </div>
+          <div class="backup-restore-row">
+            <button id="restoreBackupLink" data-i18n="backupRestoreBtn">♻️ بازیابی از کد</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <button id="clearAllBtn" data-i18n="clearAll" style="background:var(--red);width:100%">🗑️ پاک کردن همه</button>
+        </div>
+
+        <div class="section">
+          <h2 data-i18n="premium">نسخه پرمیوم</h2>
+          <button id="premiumBtn" data-i18n="premiumBuy">خرید پرمیوم</button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ نوار پایین ============ -->
+    <nav class="bottom-nav" id="bottomNav">
+      <button class="nav-btn active" data-tab="home">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label" data-i18n="home">خانه</span>
+      </button>
+      <button class="nav-btn" data-tab="stats">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label" data-i18n="stats">آمار</span>
+      </button>
+      <button class="nav-btn" data-tab="analysis">
+        <span class="nav-icon">🧠</span>
+        <span class="nav-label" data-i18n="analysis">تحلیل</span>
+      </button>
+      <button class="nav-btn" data-tab="tracker">
+        <span class="nav-icon">⚡</span>
+        <span class="nav-label" data-i18n="tracker">ردیابی</span>
+      </button>
+      <button class="nav-btn" data-tab="dreams">
+        <span class="nav-icon">🎯</span>
+        <span class="nav-label" data-i18n="dreams">آرزوها</span>
+      </button>
+      <button class="nav-btn" data-tab="rewards">
+        <span class="nav-icon">🎁</span>
+        <span class="nav-label" data-i18n="rewards">جایزه</span>
+      </button>
+      <button class="nav-btn" data-tab="note">
+        <span class="nav-icon">📝</span>
+        <span class="nav-label" data-i18n="note">یادداشت</span>
+      </button>
+      <button class="nav-btn" data-tab="diary">
+        <span class="nav-icon">📔</span>
+        <span class="nav-label" data-i18n="diary">خاطرات</span>
+      </button>
+      <button class="nav-btn" data-tab="report">
+        <span class="nav-icon">📈</span>
+        <span class="nav-label" data-i18n="report">گزارش</span>
+      </button>
+      <button class="nav-btn" data-tab="settings">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-label" data-i18n="settings">تنظیمات</span>
+      </button>
+    </nav>
+
+    <div id="toastBox" class="toast-box"></div>
+    <div id="confettiBox" class="confetti-box"></div>
+  </div>
+
+  <!-- ============ تبلیغ بنر ============ -->
+  <div id="adBannerContainer" class="ad-banner"></div>
+
+  <!-- ============ اسکریپت‌ها ============ -->
+  <!-- ترجمه‌ها: اول همه‌ی زبان‌ها، آخر فایل اتصال -->
+  <script src="translations-fa.js"></script>
+  <script src="translations-en.js"></script>
+  <script src="translations-ar.js"></script>
+  <script src="translations-eu1.js"></script>
+  <script src="translations-eu2.js"></script>
+  <script src="translations-as1.js"></script>
+  <script src="translations-as2.js"></script>
+  <script src="translations.js"></script>
+
+  <!-- بقیه اسکریپت‌ها -->
+  <script src="data.js"></script>
+  <script src="calendar.js"></script>
+  <script src="items.js"></script>
+  <script src="sounds.js"></script>
+  <script src="stats.js"></script>
+  <script src="notifications.js"></script>
+  <script src="diary.js"></script>
+  <script src="backup.js"></script>
+  <script src="settings.js"></script>
+  <script src="premium.js"></script>
+  <script src="ads.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

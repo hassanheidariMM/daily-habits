@@ -1,0 +1,530 @@
+/* ============================================
+   Daily Habits - Animations
+   انیمیشن‌های نرم و حرفه‌ای
+   ============================================ */
+
+/* ============ Fade In ============ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease;
+}
+
+/* ============ Fade In Up ============ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease;
+}
+
+/* ============ Fade In Down ============ */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.5s ease;
+}
+
+/* ============ Scale In ============ */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.scale-in {
+  animation: scaleIn 0.3s ease;
+}
+
+/* ============ Slide In Right ============ */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.4s ease;
+}
+
+/* ============ Slide In Left ============ */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.4s ease;
+}
+
+/* ============ Shake (خطا) ============ */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.shake {
+  animation: shake 0.3s ease;
+}
+
+/* ============ Pulse (تپش) ============ */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+/* ============ Bounce (جهش) ============ */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.bounce {
+  animation: bounce 0.6s ease;
+}
+
+/* ============ Pop (ظاهر شدن با جهش) ============ */
+@keyframes pop {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.pop {
+  animation: pop 0.4s ease;
+}
+
+/* ============ Rotate (چرخش) ============ */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate {
+  animation: rotate 1s linear infinite;
+}
+
+/* ============ Confetti (کاغذرنگی) ============ */
+@keyframes confetti {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti-piece {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  animation: confetti 3s linear forwards;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+/* ============ Progress Fill ============ */
+@keyframes fillBar {
+  from { width: 0%; }
+}
+
+.fill-animate {
+  animation: fillBar 0.8s ease-out;
+}
+
+/* ============ Glow (درخشش) ============ */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px var(--primary); }
+  50% { box-shadow: 0 0 20px var(--primary), 0 0 30px var(--primary); }
+}
+
+.glow {
+  animation: glow 2s infinite;
+}
+
+/* ============ Typing (تایپ) ============ */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(40, end);
+}
+
+/* ============ Heartbeat (ضربان) ============ */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  10%, 30% { transform: scale(1.1); }
+  20%, 40% { transform: scale(1); }
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s infinite;
+}
+
+/* ============ Flip (چرخش عمودی) ============ */
+@keyframes flip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.flip {
+  animation: flip 0.8s ease;
+}
+
+/* ============ Slide Down (باز شدن) ============ */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+.slide-down {
+  animation: slideDown 0.4s ease;
+  overflow: hidden;
+}
+
+/* ============ Ripple (موج) ============ */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: ripple 0.6s ease-out;
+  pointer-events: none;
+}
+
+/* ============ Shimmer (درخشش عبوری) ============ */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--bg-item) 0%, var(--bg-hover) 50%, var(--bg-item) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* ============ Float (شناور) ============ */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ============ Spin Slow ============ */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-slow {
+  animation: spinSlow 4s linear infinite;
+}
+
+/* ============ Wiggle (تکون) ============ */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.wiggle {
+  animation: wiggle 0.5s ease;
+}
+
+/* ============ Zoom In ============ */
+@keyframes zoomIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.zoom-in {
+  animation: zoomIn 0.4s ease;
+}
+
+/* ============ Bounce In ============ */
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.bounce-in {
+  animation: bounceIn 0.6s ease;
+}
+
+/* ============ انیمیشن‌های ویژه اپ ============ */
+
+/* ورود تب */
+.tab-content.active {
+  animation: fadeInUp 0.4s ease;
+}
+
+/* آیتم جدید که اضافه می‌شه */
+.item.new-item {
+  animation: slideInRight 0.4s ease;
+}
+
+/* چک‌باکس تیک زدن */
+.item input[type="checkbox"]:checked {
+  animation: pop 0.3s ease;
+}
+
+/* نوار پیشرفت */
+.mini-fill,
+.overall-fill,
+.goal-fill,
+.level-progress-fill {
+  animation: fillBar 0.6s ease-out;
+}
+
+/* آیتم در حال حذف */
+.item.removing {
+  animation: fadeIn 0.3s ease reverse;
+  opacity: 0;
+}
+
+/* آیتم تیک خورده */
+.item.done {
+  transition: all 0.3s ease;
+}
+
+.item.done .text {
+  animation: fadeIn 0.4s ease;
+}
+
+/* جعبه سطح */
+.level-box {
+  animation: fadeInUp 0.5s ease;
+}
+
+/* جمله انگیزشی */
+.motivation {
+  animation: fadeInUp 0.6s ease;
+}
+
+/* هدر */
+.header {
+  animation: fadeInDown 0.5s ease;
+}
+
+/* نوار پایین */
+.bottom-nav {
+  animation: fadeInUp 0.5s ease;
+}
+
+/* آیتم تازه‌وارد در لیست */
+.items-list .item:nth-child(1) { animation-delay: 0.05s; }
+.items-list .item:nth-child(2) { animation-delay: 0.10s; }
+.items-list .item:nth-child(3) { animation-delay: 0.15s; }
+.items-list .item:nth-child(4) { animation-delay: 0.20s; }
+.items-list .item:nth-child(5) { animation-delay: 0.25s; }
+
+/* لودینگ */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+/* اسکلتون لودینگ */
+.skeleton {
+  background: var(--bg-item);
+  border-radius: var(--radius-sm);
+  height: 20px;
+  margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--bg-hover), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+/* ============ Toast (اعلان) ============ */
+.toast-box {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+  max-width: 90%;
+}
+
+.toast {
+  background: var(--bg-card);
+  color: var(--text);
+  padding: 12px 20px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  font-size: var(--font-size-md);
+  animation: slideInRight 0.4s ease;
+  pointer-events: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 350px;
+}
+
+.toast.success {
+  background: var(--green);
+  color: #ffffff;
+  border-color: var(--green);
+}
+
+.toast.error {
+  background: var(--red);
+  color: #ffffff;
+  border-color: var(--red);
+}
+
+.toast.info {
+  background: var(--primary-dark);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.toast.removing {
+  animation: fadeIn 0.3s ease reverse;
+}
+
+/* ============ Confetti Box ============ */
+.confetti-box {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+/* ============ Achievement (دستاورد) ============ */
+.achievement {
+  position: relative;
+  padding: var(--space-md);
+  background: linear-gradient(135deg, var(--primary-dark), var(--purple));
+  border-radius: var(--radius-lg);
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: var(--space);
+  box-shadow: var(--shadow-primary);
+}
+
+.achievement.unlocked {
+  animation: bounceIn 0.6s ease;
+}
+
+/* ============ Reward Box ============ */
+.reward-box-btn {
+  display: block;
+  width: 100%;
+  font-size: 80px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--purple));
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  cursor: pointer;
+  margin-top: var(--space);
+  transition: all var(--transition);
+  border: none;
+}
+
+.reward-box-btn:hover {
+  transform: scale(1.02);
+}
+
+.reward-box-btn:active {
+  transform: scale(0.98);
+}
+
+.reward-box-btn.opening {
+  animation: wiggle 0.5s ease infinite;
+}
+
+.reward-result {
+  margin-top: var(--space);
+  padding: var(--space-md);
+  background: linear-gradient(135deg, var(--primary), var(--purple));
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  animation: bounceIn 0.6s ease;
+}
+
+/* ============ Notifications ============ */
+.notification {
+  animation: slideInRight 0.4s ease;
+}
+
+/* ============ Splash Delay ============ */
+.splash-logo {
+  animation: splashPop 0.8s ease, float 3s ease-in-out infinite 1s;
+}
+
+/* ============ انیمیشن hover دکمه‌ها ============ */
+button:not(:disabled):hover {
+  filter: brightness(1.1);
+}
+
+/* ============ Reduce Motion ============ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

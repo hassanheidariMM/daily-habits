@@ -1,0 +1,328 @@
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-card {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-modal {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-search {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-pagination {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-badge {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-datetime {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-numbers {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-currency {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-list {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-error {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-success {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-warning {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-info {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-tooltip {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-dropdown {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-checkbox {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-radio {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-progress {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-breadcrumb {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-tabs {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-accordion {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-timeline {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-stepper {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-notification {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-alert {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-skeleton {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-loading {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-empty {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-spotlight {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-command {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-context-menu {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-popover {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-hover-card {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-drawer {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-overlay {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-portal {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-scroll-area {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-virtual-list {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-infinite-scroll {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-masonry {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-carousel {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-image {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-avatar {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-group {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-stack {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-grid {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-container {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-center {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-flex {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-box {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-paper {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-section {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-divider {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.peyda-space {
+  font-family: 'Peyda', sans-serif;
+  direction: rtl;
+  text-align: right;
+}
